@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.judgmentlabs.ai/documentation
+docs: https://docs.judgmentlabs.ai/documentation
+summary:
+  types: [apiKey]
+  api_key_in: [header, env]
+  oauth2_flows: []
+  note: >-
+    Judgment authenticates with an organization-scoped API key plus an organization ID. The
+    key is presented as a bearer token on requests to the platform API and MCP server; both
+    values are typically supplied to the SDK/CLI via environment variables. No OAuth2 / OIDC
+    flow or granular scope surface is published (there is no public OpenAPI to derive from).
+schemes:
+- name: JudgmentApiKey
+  type: apiKey
+  in: header
+  scheme: bearer
+  credentials:
+  - env: JUDGMENT_API_KEY
+    role: organization API key (bearer token)
+  - env: JUDGMENT_ORG_ID
+    role: organization identifier
+  applies_to:
+  - https://api.judgmentlabs.ai
+  - https://mcp.judgmentlabs.ai
+  evidence:
+  - 'mcp.judgmentlabs.ai returns HTTP 401 without credentials'
+  - 'Official Judgment Agent Skill instructs setting JUDGMENT_API_KEY and JUDGMENT_ORG_ID'
