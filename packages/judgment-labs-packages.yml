@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/JudgmentLabs
+packages:
+- language: python
+  registry: pypi
+  name: judgeval
+  url: https://pypi.org/project/judgeval/
+  install: pip install judgeval
+  version: 1.2.0
+  repository: https://github.com/JudgmentLabs/judgeval
+  official: true
+  kind: sdk
+- language: javascript
+  registry: npm
+  name: judgeval
+  url: https://www.npmjs.com/package/judgeval
+  install: npm install judgeval
+  version: 1.2.1
+  repository: https://github.com/JudgmentLabs/judgeval-js
+  official: true
+  kind: sdk
+- language: go
+  registry: pkg.go.dev
+  name: github.com/JudgmentLabs/judgeval-go
+  url: https://pkg.go.dev/github.com/JudgmentLabs/judgeval-go
+  install: go get github.com/JudgmentLabs/judgeval-go
+  repository: https://github.com/JudgmentLabs/judgeval-go
+  official: true
+  kind: sdk
+- language: java
+  registry: github
+  name: judgeval-java
+  url: https://github.com/JudgmentLabs/judgeval-java
+  repository: https://github.com/JudgmentLabs/judgeval-java
+  official: true
+  kind: sdk
+  note: Source distribution on GitHub; not published to Maven Central at time of harvest.
+- language: shell
+  registry: homebrew
+  name: judgment
+  url: https://github.com/JudgmentLabs/homebrew-tap
+  install: brew install JudgmentLabs/tap/judgment
+  repository: https://github.com/JudgmentLabs/cli
+  official: true
+  kind: cli

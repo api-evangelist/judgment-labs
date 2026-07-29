@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: probe of /.well-known/ on judgmentlabs.ai + api.judgmentlabs.ai
+hosts:
+- host: https://www.judgmentlabs.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://api.judgmentlabs.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+notes: >-
+  No /.well-known discovery documents are published on the website or API host. Recorded as
+  honest negative data; no WellKnown or SecurityTxt scoring pointer is emitted.

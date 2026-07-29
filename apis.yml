@@ -1,9 +1,30 @@
 aid: judgment-labs
 name: Judgment Labs
-description: Judgment Labs is a company surfaced as a portfolio company of lightspeed-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Judgment Labs builds the continuous-improvement stack for AI agents: tooling to trace,
+  evaluate, monitor, and improve agent behavior in production. Its open-source Judgeval SDK
+  (Python and TypeScript, with Go and Java clients) instruments agent frameworks and model
+  providers to capture traces, spans, and tool calls; Agent Judges and Code Judges score
+  behavior against natural-language rubrics and deterministic checks; and Agent Behavior
+  Monitoring plus automations and alerts surface regressions and failure modes. The platform
+  is accessed through the Judgeval SDKs, the judgment CLI, and a hosted MCP server, and
+  integrates with LangGraph, OpenAI Agents SDK, Claude Agent SDK, Google ADK, Vercel AI SDK,
+  LiveKit, Pipecat, and OpenTelemetry / OpenInference tracing pipelines. The company is
+  backed by Lightspeed with a $32M round.
 url: https://raw.githubusercontent.com/api-evangelist/judgment-labs/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.judgmentlabs.ai/logo/full_logo_dark.svg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,12 +33,88 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Agents
+- Artificial Intelligence
+- Agent Evaluation
+- Observability
+- Tracing
+- Monitoring
+- LLM
+- Developer Tools
+- MCP
+apis:
+- name: Judgment Platform API
+  description: >-
+    The backend platform API behind Judgeval — ingests agent traces/spans, runs evaluations
+    and judges, and serves traces, sessions, behaviors, datasets, and automations. Consumed
+    through the Judgeval SDKs, the judgment CLI, and the hosted MCP server rather than a
+    public OpenAPI; authenticated with a Judgment API key and organization ID.
+  humanURL: https://docs.judgmentlabs.ai/documentation
+  baseURL: https://api.judgmentlabs.ai
+  properties:
+  - type: Documentation
+    url: https://docs.judgmentlabs.ai/documentation
+  - type: Authentication
+    url: authentication/judgment-labs-authentication.yml
+common:
+- type: Website
+  url: https://www.judgmentlabs.ai
+- type: DeveloperPortal
+  url: https://docs.judgmentlabs.ai/
+- type: Documentation
+  url: https://docs.judgmentlabs.ai/documentation
+- type: APIReference
+  url: https://docs.judgmentlabs.ai/sdk-reference
+- type: GettingStarted
+  url: https://docs.judgmentlabs.ai/documentation
+- type: Support
+  url: mailto:support@judgmentlabs.ai
+- type: Blog
+  url: https://www.judgmentlabs.ai/blogs
+- type: GitHubOrganization
+  url: https://github.com/JudgmentLabs
+- type: Login
+  url: https://app.judgmentlabs.ai/login
+- type: SignUp
+  url: https://app.judgmentlabs.ai/login
+- type: TermsOfService
+  url: https://app.judgmentlabs.ai/terms
+- type: PrivacyPolicy
+  url: https://app.judgmentlabs.ai/privacy
+- type: StatusPage
+  url: https://status.judgmentlabs.ai
+- type: Packages
+  url: packages/judgment-labs-packages.yml
+- type: SDKs
+  url: packages/judgment-labs-packages.yml
+- type: CLI
+  url: cli/judgment-labs-cli.yml
+- type: MCPServer
+  url: mcp/judgment-labs-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/judgment-labs-llms.txt
+- type: ChangeLog
+  url: changelog/judgment-labs-changelog.yml
+- type: Authentication
+  url: authentication/judgment-labs-authentication.yml
+- type: Conformance
+  url: conformance/judgment-labs-conformance.yml
+- type: Lifecycle
+  url: lifecycle/judgment-labs-lifecycle.yml
+- type: DomainSecurity
+  url: security/judgment-labs-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/JudgmentLabs/skills
+note: >-
+  Official Agent Skills published by Judgment Labs (Claude Code / Codex plugin marketplace,
+  owner support@judgmentlabs.ai). Saved verbatim from the JudgmentLabs/skills and
+  JudgmentLabs/judgment-plugin repositories.
+skills:
+- file: judgment-labs-judgment-skill.md
+  name: judgment
+  description: >-
+    Use Judgment for agent tracing, evaluations, code judges, datasets, and monitoring —
+    instrumenting applications, evaluating outputs, and looking up current Judgment docs.
+  source: https://github.com/JudgmentLabs/skills/blob/HEAD/skills/judgment/SKILL.md
+  official: true
+- file: judgment-labs-mcp-best-practices-skill.md
+  name: mcp-server-best-practices
+  description: >-
+    Best practices for using the Judgment MCP server effectively — when to use MCP vs other
+    tools, search_traces batching, and general usage patterns.
+  source: https://github.com/JudgmentLabs/skills/blob/HEAD/skills/mcp-server-best-practices/SKILL.md
+  official: true

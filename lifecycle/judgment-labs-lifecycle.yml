@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/JudgmentLabs/judgeval/releases
+versioning:
+  scheme: semver
+  current: '1.2.0'
+  applies_to: judgeval SDK (Python) / judgeval-js (npm)
+  docs: https://docs.judgmentlabs.ai/sdk-reference
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal deprecation-policy page or RFC 8594 Sunset/Deprecation header support was
+    found. The prior Judgment CLI is marked deprecated in the docs (legacy /cli-reference and
+    /documentation/cli), but there is no published estate-wide deprecation policy.
+status_page: https://status.judgmentlabs.ai
+status_platform: Better Stack
+sla:
+  url: null
+  uptime_target: null
+deprecated_operations: []

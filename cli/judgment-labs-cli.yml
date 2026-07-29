@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.judgmentlabs.ai/cli-reference
+name: judgment
+repository: https://github.com/JudgmentLabs/cli
+docs: https://docs.judgmentlabs.ai/cli-reference
+install:
+- method: homebrew
+  command: brew install JudgmentLabs/tap/judgment
+  tap: https://github.com/JudgmentLabs/homebrew-tap
+auth:
+- judgment login
+- judgment configure
+commands:
+- name: login
+  summary: Authenticate the Judgment CLI.
+- name: logout
+  summary: Remove stored credentials.
+- name: configure
+  summary: Update stored credentials.
+- name: status
+  summary: Show authentication and project status.
+- name: context
+  summary: Manage default organization and project context.
+- name: organizations
+  summary: List and inspect organizations.
+- name: projects
+  summary: Manage projects.
+- name: traces
+  summary: Search, inspect, tag, and re-evaluate traces.
+- name: sessions
+  summary: Search and inspect agent sessions.
+- name: agent-threads
+  summary: List and inspect agent thread conversations.
+- name: behaviors
+  summary: View and manage behavior labels.
+- name: judges
+  summary: View and manage judges and online evaluation settings.
+- name: automations
+  summary: Manage automations that act on metrics.
+- name: prompts
+  summary: Fetch, commit, and tag versioned prompts.
+- name: docs
+  summary: Search and read Judgment documentation.
+- name: completion
+  summary: Print shell completion scripts.
+notes: >-
+  A legacy Judgment CLI documented under /cli-reference (root) is deprecated and no longer
+  under active development; the command surface above is the current `judgment` CLI.
