@@ -1,20 +1,58 @@
-generated: '2026-07-19'
+generated: '2026-09-19'
 method: searched
 source: probe of /.well-known/ on judgmentlabs.ai + api.judgmentlabs.ai
 hosts:
 - host: https://www.judgmentlabs.ai
   documents:
-  - {path: /.well-known/security.txt, status: 404}
-  - {path: /security.txt, status: 404}
-  - {path: /.well-known/openid-configuration, status: 404}
-  - {path: /.well-known/oauth-authorization-server, status: 404}
-  - {path: /.well-known/api-catalog, status: 404}
-  - {path: /.well-known/ai-plugin.json, status: 404}
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
 - host: https://api.judgmentlabs.ai
   documents:
-  - {path: /.well-known/security.txt, status: 404}
-  - {path: /.well-known/openid-configuration, status: 404}
-  - {path: /.well-known/oauth-authorization-server, status: 404}
-notes: >-
-  No /.well-known discovery documents are published on the website or API host. Recorded as
-  honest negative data; no WellKnown or SecurityTxt scoring pointer is emitted.
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://mcp.judgmentlabs.ai
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: judgment-labs-mcp-oauth-protected-resource.json
+    bytes: 99
+  path_echo_control: passed
+- host: https://auth.judgmentlabs.ai
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: judgment-labs-auth-oauth-authorization-server.json
+    bytes: 435
+  path_echo_control: passed
+notes: No /.well-known discovery documents are published on the website or API host. Recorded as honest
+  negative data; no WellKnown or SecurityTxt scoring pointer is emitted.
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://mcp.judgmentlabs.ai
+    path: /.well-known/oauth-protected-resource
+    file: judgment-labs-mcp-oauth-protected-resource.json
+  - host: https://auth.judgmentlabs.ai
+    path: /.well-known/oauth-authorization-server
+    file: judgment-labs-auth-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'
